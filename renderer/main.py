@@ -288,8 +288,8 @@ class Map(object):
 
 
 if __name__ == "__main__":
-    originalFileName = "london.txt"
-    destinationFileName = "london.pdf"
+    originalFileName = "systems/san-francisco/san-francisco.txt"
+    destinationFileName = "san-francisco.pdf"
 
     if (len(sys.argv) == 3):
         originalFileName = sys.argv[1]

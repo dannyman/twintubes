@@ -461,17 +461,17 @@ waypoint M17Ceast2  M17C,14.5,0.0
 platform out E
 platform in E
 
-station M16N 16th & \n Noe -9.5,5.0
+station M16N 16th & Noe -9.5,5.0
 label NW
 platform out NE Fm L
 platform in NE Fm R
 
-station M15S 15th & \n Sanchez -6.5,2.0
+station M15S 15th & Sanchez -6.5,2.0
 label NW
 platform out NE Fm L
 platform in NE Fm R
 
-station M14C 14th & \n Church -3.5,-1.0
+station M14C 14th & Church -3.5,-1.0
 label NW
 platform out NE Fm L
 platform in NE Fm R
@@ -945,8 +945,8 @@ subtrack DCHsi-out MDD-out Un
 subtrack MDDsouth-in MDD-in Fm
 subtrack MDDsouth-out MDD-out Fm
 
-track MDD-in MLG-in Fm
-track MDD-out MLG-out Fm
+track MMD-in MDD-in Fm
+track MMD-out MDD-out Fm
 
 
 # Post fixes
