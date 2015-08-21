@@ -31,10 +31,9 @@ track SaFe-2 SaJo-2 MVWi
 station Race Race -18,8
 label W
 platform 1 SW MVWi L
-platform 2 SW MVWi R
 
 track SaJo-1 Race-1 MVWi
-track SaJo-2 Race-2 MVWi
+track SaJo-2 Race-1 MVWi
 
 station Frui Fruitdale -23,13
 label W
@@ -42,7 +41,38 @@ platform 1 SW MVWi L
 platform 2 SW MVWi R
 
 track Race-1 Frui-1 MVWi
-track Race-2 Frui-2 MVWi
+track Race-1 Frui-2 MVWi
+
+station Basc Bascom -28,18
+label W
+platform 1 SW MVWi L
+platform 2 SW MVWi R
+
+track Frui-1 Basc-1 MVWi
+track Frui-2 Basc-2 MVWi
+
+station Hami Hamilton -33,23
+label W
+platform 1 SW MVWi L
+
+track Basc-1 Hami-1 MVWi
+track Basc-2 Hami-1 MVWi
+
+station Camp Campbell -38,28
+label W
+platform 1 SW MVWi L
+platform 2 SW MVWi R
+
+track Hami-1 Camp-1 MVWi
+track Hami-1 Camp-2 MVWi
+
+station Winc Winchester -43,33
+label W
+platform 1 SW MVWi L
+platform 2 SW MVWi R
+
+track Camp-1 Winc-1 MVWi
+track Camp-2 Winc-2 MVWi
 
 #station ChDi Children\'s Discovery Museum 0.0,5.0
 #label E
