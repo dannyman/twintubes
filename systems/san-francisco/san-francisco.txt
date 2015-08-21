@@ -281,7 +281,7 @@ label S
 platform in W Ki R
 platform out W Ki L
 
-station KJS Junipero Serra \n & Ocean -30.0,40.5
+station KJS Junipero Serra & Ocean -30.0,40.5
 label E
 platform out N Ki L
 platform in N Ki R

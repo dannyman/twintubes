@@ -1,0 +1,56 @@
+line MVWi AAFFAA
+line ARST AAAAFF
+line OhAl FFAAAA
+
+#station PaSA Paseo de San Antonio 0,-5
+#label E
+#platform 1 N MVWi R
+#platform 2 N MVWi L
+
+station CoCe Convention Center 0,0
+label E
+platform 1 W MVWi L
+platform 2 W MVWi R
+
+station SaFe San Fernando -8,-5
+label N
+platform 1 W MVWi L
+platform 2 W MVWi R
+
+track CoCe-1 SaFe-1 MVWi
+track CoCe-2 SaFe-2 MVWi
+
+station SaJo San Jose Diridon -13,0
+label W
+platform 1 S MVWi R
+platform 2 S MVWi L
+
+track SaFe-1 SaJo-1 MVWi
+track SaFe-2 SaJo-2 MVWi
+
+station Race Race -18,8
+label W
+platform 1 SW MVWi L
+platform 2 SW MVWi R
+
+track SaJo-1 Race-1 MVWi
+track SaJo-2 Race-2 MVWi
+
+station Frui Fruitdale -23,13
+label W
+platform 1 SW MVWi L
+platform 2 SW MVWi R
+
+track Race-1 Frui-1 MVWi
+track Race-2 Frui-2 MVWi
+
+#station ChDi Children\'s Discovery Museum 0.0,5.0
+#label E
+#platform 1 N MVWi R
+#platform 2 N MVWi L
+
+#track ChDi-1 CoCe-1 MVWi
+#track ChDi-2 CoCe-2 MVWi
+
+#track CoCe-1 PaSA-1 MVWi
+#track CoCe-2 PaSA-2 MVWi
