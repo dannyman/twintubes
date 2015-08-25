@@ -2,6 +2,29 @@ line MVWi AAFFAA
 line ARST AAAAFF
 line OhAl FFAAAA
 
+line border 000000
+
+station NW NW -60,-60
+label NW
+platform 1 NE border N
+
+station NE NE 60,-60
+label NE
+platform 1 SE border N
+
+station SE SE 60,60
+label SE
+platform 1 SW border N
+
+station SW SW -60,60
+label SW
+platform 1 NW border N
+
+track NW-1 NE-1 border
+track NE-1 SE-1 border
+track SE-1 SW-1 border
+track SW-1 NW-1 border
+
 #station PaSA Paseo de San Antonio 0,-5
 #label E
 #platform 1 N MVWi R
