@@ -1,7 +1,24 @@
-line MVWi AAFFAA
-line ARST AAAAFF
-line OhAl FFAAAA
+# Notes:
+#
+# Root: Convention Center
+#
+# Stations are general offset from next station closest to root, spaced
+# 5 coords away.
+#
+# For diagonal shifts, ex: N -> NE, the diagonal value is 7 (5 * 1.4)
 
+# Principle Lines
+# Mountain View - Winchester (green)
+line MVWi AAFFAA
+# Alum Rock - Santa Teresa (blue)
+line ARST AAAAFF
+# Ohlone - Almaden (orange)
+line OhAl FFAAAA
+# Non-Revenue (grey)
+line None 888888
+
+# BORDER LINE -- sets outer dimensions of drawing.  Necessary because
+# relative stations and labels do not extend the canvas.
 line border 000000
 
 station NW NW -60,-60
@@ -12,98 +29,220 @@ station NE NE 60,-60
 label NE
 platform 1 SE border N
 
-station SE SE 60,60
+station SE SE 60,65
 label SE
 platform 1 SW border N
 
-station SW SW -60,60
+station SW SW -60,65
 label SW
 platform 1 NW border N
 
-track NW-1 NE-1 border
-track NE-1 SE-1 border
-track SE-1 SW-1 border
-track SW-1 NW-1 border
+subtrack NW-1 NE-1 border
+subtrack NE-1 SE-1 border
+subtrack SE-1 SW-1 border
+subtrack SW-1 NW-1 border
+# END OF BORDER SECTION
 
-#station PaSA Paseo de San Antonio 0,-5
-#label E
-#platform 1 N MVWi R
-#platform 2 N MVWi L
+
+# CONVENTION CENTER
 
 station CoCe Convention Center 0,0
 label E
-platform 1 W MVWi L
-platform 2 W MVWi R
+platform 1 W ARST L
+platform 2 W ARST R
 
-station SaFe San Fernando -8,-5
+station CoCe_wayW CoCe,-5,0
+platform 1 W ARST N
+platform 2 W ARST N
+
+# Crossover west of Convention Center
+subtrack CoCe-1 CoCe_wayW-2 None
+
+subtrack CoCe-1 CoCe_wayW-1 ARST
+subtrack CoCe-2 CoCe_wayW-2 ARST
+
+
+# CONVENTION CENTER -- COTTLE
+
+station ChDi Children's Discovery Museum CoCe_wayW,-7,7
+label E
+platform 1 S ARST L
+platform 2 S ARST R
+
+station ChDi_wayN ChDi,0,-5
+platform 1 S None N
+platform 2 S None N
+
+subtrack ChDi_wayN-1 ChDi-1 None
+subtrack ChDi_wayN-2 ChDi-2 None
+
+station Virg Virginia ChDi,0,5
+label E
+platform 1 S ARST L
+platform 2 S ARST R
+
+subtrack ChDi-1 Virg-1 ARST
+subtrack ChDi-2 Virg-2 ARST
+
+station Tami Tamien Virg,0,5
+label E
+platform 1 S ARST L
+platform 2 S ARST R
+
+subtrack Virg-1 Tami-1 ARST
+subtrack Virg-2 Tami-2 ARST
+
+station Curt Curtner Tami,0,5
+label E
+platform 1 S ARST L
+platform 2 S ARST R
+
+subtrack Tami-1 Curt-1 ARST
+subtrack Tami-2 Curt-2 ARST
+subtrack Tami-1 Curt-2 ARST
+
+station Capi Capitol Curt,0,5
+label E
+platform 1 S ARST L
+platform 2 S ARST R
+
+subtrack Curt-1 Capi-1 ARST
+subtrack Curt-2 Capi-2 ARST
+subtrack Curt-2 Capi-1 ARST # Crossover
+
+station Bran Branham Capi,0,5
+label E
+platform 1 S ARST L
+platform 2 S ARST R
+
+subtrack Capi-1 Bran-1 ARST
+subtrack Capi-2 Bran-2 ARST
+
+station Ohlo Ohlone/Chynoweth Bran,0,5
+label E
+platform 1 S ARST L
+platform 2 S ARST R
+
+subtrack Bran-1 Ohlo-1 ARST
+subtrack Bran-2 Ohlo-2 ARST
+
+station BlHi Blossom Hill Ohlo,5,7
+label E
+platform 1 SE ARST R
+platform 2 SE ARST L
+
+subtrack Ohlo-1 BlHi-2 ARST
+subtrack Ohlo-2 BlHi-1 ARST
+subtrack Ohlo-1 BlHi-1 ARST # Crossover
+
+station Snel Snell BlHi,5,5
+label E
+platform 1 SE ARST R
+platform 2 SE ARST L
+
+subtrack BlHi-1 Snel-1 ARST
+subtrack BlHi-2 Snel-2 ARST
+
+station Cott Cottle Snel,7,5
+label N
+platform 1 E ARST R
+platform 2 E ARST L
+
+subtrack Snel-1 Cott-1 ARST
+subtrack Snel-2 Cott-2 ARST
+subtrack Snel-1 Cott-2 ARST # Crossover
+
+station SaTe Santa Teresa Cott,5,7
+platform 1 S ARST L
+platform 2 S ARST R
+
+subtrack Cott-1 SaTe-2 ARST
+subtrack Cott-2 SaTe-1 ARST
+subtrack Cott-1 SaTe-1 ARST # Crossover
+subtrack Cott-2 SaTe-2 ARST # Crossover
+
+# CONVENTION CENTER -- WINCHESTER
+
+station SaFe_wayS CoCe_wayW,-7,-5
+platform 1 S MVWi N
+platform 2 S MVWi N
+
+station SaFe San Fernando SaFe_wayS,-7,-5
 label N
 platform 1 W MVWi L
 platform 2 W MVWi R
 
-track CoCe-1 SaFe-1 MVWi
-track CoCe-2 SaFe-2 MVWi
+subtrack SaFe_wayS-1 ChDi_wayN-1 None
+subtrack SaFe_wayS-2 ChDi_wayN-2 None
 
-station SaJo San Jose Diridon -13,0
+subtrack SaFe-1! SaFe_wayS-2 MVWi
+subtrack SaFe-2! SaFe_wayS-1 MVWi
+
+subtrack CoCe_wayW-2 SaFe_wayS-1! MVWi
+subtrack CoCe_wayW-1 SaFe_wayS-2! MVWi
+# Redrawn from earlier
+subtrack CoCe_wayW-1 ChDi-1 ARST
+subtrack CoCe_wayW-2 ChDi-2 ARST
+
+station SaJo San Jose Diridon SaFe,-7,5
 label W
 platform 1 S MVWi R
 platform 2 S MVWi L
 
-track SaFe-1 SaJo-1 MVWi
-track SaFe-2 SaJo-2 MVWi
+subtrack SaFe-1 SaJo-1 MVWi
+subtrack SaFe-2 SaJo-2 MVWi
 
-station Race Race -18,8
+station SaJo_stub SaJo,0,5
+platform 1 S MVWi N
+platform 2 S None N
+
+subtrack SaJo-1 SaJo_stub-2 None
+subtrack SaJo-2 SaJo_stub-2 None
+subtrack SaJo-1 SaJo_stub-1 MVWi
+subtrack SaJo-2 SaJo_stub-1 MVWi
+
+station Race Race SaJo_stub,-5,7
 label W
 platform 1 SW MVWi L
 
-track SaJo-1 Race-1 MVWi
-track SaJo-2 Race-1 MVWi
+subtrack SaJo_stub-1 Race-1 MVWi
+subtrack SaJo_stub-1 Race-1 MVWi
 
-station Frui Fruitdale -23,13
-label W
-platform 1 SW MVWi L
-platform 2 SW MVWi R
-
-track Race-1 Frui-1 MVWi
-track Race-1 Frui-2 MVWi
-
-station Basc Bascom -28,18
-label W
-platform 1 SW MVWi L
-platform 2 SW MVWi R
-
-track Frui-1 Basc-1 MVWi
-track Frui-2 Basc-2 MVWi
-
-station Hami Hamilton -33,23
-label W
-platform 1 SW MVWi L
-
-track Basc-1 Hami-1 MVWi
-track Basc-2 Hami-1 MVWi
-
-station Camp Campbell -38,28
+station Frui Fruitdale Race,-5,5
 label W
 platform 1 SW MVWi L
 platform 2 SW MVWi R
 
-track Hami-1 Camp-1 MVWi
-track Hami-1 Camp-2 MVWi
+subtrack Race-1 Frui-1 MVWi
+subtrack Race-1 Frui-2 MVWi
 
-station Winc Winchester -43,33
+station Basc Bascom Frui,-5,5
 label W
 platform 1 SW MVWi L
 platform 2 SW MVWi R
 
-track Camp-1 Winc-1 MVWi
-track Camp-2 Winc-2 MVWi
+subtrack Frui-1 Basc-1 MVWi
+subtrack Frui-2 Basc-2 MVWi
 
-#station ChDi Children\'s Discovery Museum 0.0,5.0
-#label E
-#platform 1 N MVWi R
-#platform 2 N MVWi L
+station Hami Hamilton Basc,-5,5
+label W
+platform 1 SW MVWi L
 
-#track ChDi-1 CoCe-1 MVWi
-#track ChDi-2 CoCe-2 MVWi
+subtrack Basc-1 Hami-1 MVWi
+subtrack Basc-2 Hami-1 MVWi
 
-#track CoCe-1 PaSA-1 MVWi
-#track CoCe-2 PaSA-2 MVWi
+station Camp Campbell Hami,-5,7
+label W
+platform 1 S MVWi L
+platform 2 S MVWi R
+
+subtrack Hami-1 Camp-1 MVWi
+subtrack Hami-1 Camp-2 MVWi
+
+station Winc Winchester Camp,0,5
+label W
+platform 1 S MVWi L
+platform 2 S MVWi R
+
+subtrack Camp-1 Winc-1 MVWi
+subtrack Camp-2 Winc-2 MVWi
