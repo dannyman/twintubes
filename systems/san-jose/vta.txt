@@ -55,11 +55,9 @@ station CoCe_wayW CoCe,-5,0
 platform 1 W ARST N
 platform 2 W ARST N
 
-# Crossover west of Convention Center
-subtrack CoCe-1 CoCe_wayW-2 None
-
 subtrack CoCe-1 CoCe_wayW-1 ARST
 subtrack CoCe-2 CoCe_wayW-2 ARST
+subtrack CoCe-1 CoCe_wayW-2 ARST # Crossover
 
 
 # CONVENTION CENTER -- COTTLE
