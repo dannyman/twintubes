@@ -46,12 +46,12 @@ subtrack SW-1 NW-1 border
 
 # CONVENTION CENTER
 
-station CoCe Convention Center 0,0
-label E
+station CoCe Convention\nCenter 0,0
+label S
 platform 1 W ARST L
 platform 2 W ARST R
 
-station CoCe_wayW CoCe,-5,0
+station CoCe_wayW CoCe,-4,0
 platform 1 W ARST N
 platform 2 W ARST N
 
@@ -60,9 +60,9 @@ subtrack CoCe-2 CoCe_wayW-2 ARST
 subtrack CoCe-1 CoCe_wayW-2 ARST # Crossover
 
 
-# CONVENTION CENTER -- COTTLE
+# CONVENTION CENTER -- OHLONE/CYNOWETH
 
-station ChDi Children's Discovery Museum CoCe_wayW,-7,7
+station ChDi Children's Discovery Museum CoCe_wayW,-3,5
 label E
 platform 1 S ARST L
 platform 2 S ARST R
@@ -124,14 +124,47 @@ platform 2 S ARST R
 subtrack Bran-1 Ohlo-1 ARST
 subtrack Bran-2 Ohlo-2 ARST
 
-station BlHi Blossom Hill Ohlo,5,7
+
+# OHLONE/CHYNOWETH -- ALMADEN
+
+station Oakr_wayN Ohlo,-3,3
+platform 1 W OhAl N
+
+subtrack Ohlo-1 Oakr_wayN-1 OhAl
+subtrack Ohlo-2 Oakr_wayN-1 OhAl
+
+station Oakr Oakridge Oakr_wayN,-3,3
+label E
+platform 1 S OhAl L
+
+subtrack Oakr_wayN-1 Oakr-1 OhAl
+
+station Alma Almaden Oakr,0,5
+label S
+platform 1 S OhAl L
+platform 2 S OhAl R
+
+subtrack Oakr-1 Alma-1 OhAl
+subtrack Oakr-1 Alma-2 OhAl
+
+
+# OHLONE/CHYNOWETH -- SANTA TERESA
+
+station BlHi_wayW Ohlo,3,3
+platform 1 E ARST N
+platform 2 E ARST N
+
+subtrack Ohlo-1 BlHi_wayW-2 ARST
+subtrack Ohlo-2 BlHi_wayW-1 ARST
+
+station BlHi Blossom Hill BlHi_wayW,5,3
 label E
 platform 1 SE ARST R
 platform 2 SE ARST L
 
-subtrack Ohlo-1 BlHi-2 ARST
-subtrack Ohlo-2 BlHi-1 ARST
-subtrack Ohlo-1 BlHi-1 ARST # Crossover
+subtrack BlHi_wayW-1 BlHi-1 ARST
+subtrack BlHi_wayW-2 BlHi-2 ARST
+subtrack BlHi_wayW-2 BlHi-1 ARST # Crossover
 
 station Snel Snell BlHi,5,5
 label E
@@ -151,6 +184,7 @@ subtrack Snel-2 Cott-2 ARST
 subtrack Snel-1 Cott-2 ARST # Crossover
 
 station SaTe Santa Teresa Cott,5,7
+label S
 platform 1 S ARST L
 platform 2 S ARST R
 
@@ -159,13 +193,14 @@ subtrack Cott-2 SaTe-1 ARST
 subtrack Cott-1 SaTe-1 ARST # Crossover
 subtrack Cott-2 SaTe-2 ARST # Crossover
 
+
 # CONVENTION CENTER -- WINCHESTER
 
-station SaFe_wayS CoCe_wayW,-7,-5
+station SaFe_wayS CoCe_wayW,-3,-3
 platform 1 S MVWi N
 platform 2 S MVWi N
 
-station SaFe San Fernando SaFe_wayS,-7,-5
+station SaFe San Fernando SaFe_wayS,-3,-3
 label N
 platform 1 W MVWi L
 platform 2 W MVWi R
@@ -200,14 +235,14 @@ subtrack SaJo-1 SaJo_stub-1 MVWi
 subtrack SaJo-2 SaJo_stub-1 MVWi
 
 station Race Race SaJo_stub,-5,7
-label W
+label E
 platform 1 SW MVWi L
 
 subtrack SaJo_stub-1 Race-1 MVWi
 subtrack SaJo_stub-1 Race-1 MVWi
 
 station Frui Fruitdale Race,-5,5
-label W
+label E
 platform 1 SW MVWi L
 platform 2 SW MVWi R
 
@@ -215,7 +250,7 @@ subtrack Race-1 Frui-1 MVWi
 subtrack Race-1 Frui-2 MVWi
 
 station Basc Bascom Frui,-5,5
-label W
+label E
 platform 1 SW MVWi L
 platform 2 SW MVWi R
 
@@ -223,14 +258,14 @@ subtrack Frui-1 Basc-1 MVWi
 subtrack Frui-2 Basc-2 MVWi
 
 station Hami Hamilton Basc,-5,5
-label W
+label E
 platform 1 SW MVWi L
 
 subtrack Basc-1 Hami-1 MVWi
 subtrack Basc-2 Hami-1 MVWi
 
 station Camp Campbell Hami,-5,7
-label W
+label E
 platform 1 S MVWi L
 platform 2 S MVWi R
 
@@ -238,9 +273,127 @@ subtrack Hami-1 Camp-1 MVWi
 subtrack Hami-1 Camp-2 MVWi
 
 station Winc Winchester Camp,0,5
-label W
+label S
 platform 1 S MVWi L
 platform 2 S MVWi R
 
 subtrack Camp-1 Winc-1 MVWi
 subtrack Camp-2 Winc-2 MVWi
+
+
+# CONVENTION CENTER -- TASMAN
+
+station CoCe_wayE CoCe,4,0
+platform 1 W ARST N
+platform 2 W ARST N
+
+subtrack CoCe_wayE-1 CoCe-1 ARST
+subtrack CoCe_wayE-2 CoCe-2 ARST
+subtrack CoCe_wayE-2 CoCe-1 ARST # Crossover
+
+station PaSA1 CoCe_wayE,3,-4
+label E
+platform 1 S ARST L
+
+station CoCe_wayEE CoCe_wayE,7,0
+platform 1 W ARST N
+
+subtrack PaSA1-1 CoCe_wayEE-1! None
+
+subtrack CoCe_wayEE-1 CoCe_wayE-1 ARST
+
+subtrack PaSA1-1 CoCe_wayE-2 ARST
+
+station PaSA2 Paseo de San Antonio CoCe_wayEE,3,-4
+label E
+platform 1 S ARST R
+
+subtrack PaSA2-1 CoCe_wayEE-1 ARST
+
+station SaCl1 PaSA1,0,-5
+platform 1 S ARST L
+
+subtrack SaCl1-1 PaSA1-1 ARST
+
+station SaCl2 Santa Clara PaSA2,0,-5
+label E
+platform 1 S ARST R
+
+subtrack SaCl2-1 PaSA2-1 ARST
+
+station StJa1 SaCl1,0,-5
+platform 1 S ARST L
+
+subtrack StJa1-1 SaCl1-1 ARST
+
+station StJa2 St. James SaCl2,0,-5
+label E
+platform 1 S ARST R
+
+subtrack StJa2-1 SaCl2-1 ARST
+
+station Japa_waySE StJa1,3,-3
+platform 1 E ARST N
+
+subtrack StJa1-1! Japa_waySE-1 None
+subtrack Japa_waySE-1 StJa2-1 ARST
+
+station Japa_wayS StJa1,0,-6
+platform 1 S ARST N
+platform 2 S ARST N
+
+subtrack Japa_wayS-1 Japa_waySE-1 ARST
+subtrack Japa_wayS-2 StJa1-1 ARST
+
+station Japa Japantown/Ayer Japa_wayS,0,-5
+label E
+platform 1 S ARST L
+platform 2 S ARST R
+
+subtrack Japa-1 Japa_wayS-1 ARST
+subtrack Japa-2 Japa_wayS-2 ARST
+subtrack Japa-1 Japa_wayS-2 ARST # Crossover
+
+station CiCe Civic Center Japa,0,-5
+label E
+platform 1 S ARST L
+platform 2 S ARST R
+
+subtrack CiCe-1 Japa-1 ARST
+subtrack CiCe-2 Japa-2 ARST
+subtrack CiCe-2 Japa-1 ARST # Crossover
+
+station GuDi_wayEE CiCe,0,-5
+platform 1 S ARST N
+platform 2 S ARST N
+
+depot GuDi Guadalupe\nDivision GuDi_wayEE,-7,0
+platform 1 E None N
+platform 2 E None N
+
+station GuDi_wayE GuDi,3,0
+platform 1 E None N
+platform 2 E None N
+
+station Gish Gish GuDi_wayEE,0,-5
+label E
+platform 1 S ARST R
+platform 2 S ARST L
+
+subtrack Gish-1 GuDi_wayE-1! None
+subtrack Gish-2 GuDi_wayE-2! None
+
+subtrack GuDi-1 GuDi_wayE-1 None
+subtrack GuDi-1 GuDi_wayE-2 None
+subtrack GuDi-2 GuDi_wayE-1 None
+subtrack GuDi-2 GuDi_wayE-2 None
+
+subtrack GuDi_wayE-1 CiCe-2 None
+subtrack GuDi_wayE-2 CiCe-1 None
+
+subtrack GuDi_wayEE-1 CiCe-1 ARST
+subtrack GuDi_wayEE-2 CiCe-2 ARST
+subtrack GuDi_wayEE-2 CiCe-1 ARST # Crossover
+
+subtrack Gish-1 GuDi_wayEE-1 ARST
+subtrack Gish-2 GuDi_wayEE-2 ARST
